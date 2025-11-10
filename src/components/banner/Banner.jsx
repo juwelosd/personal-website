@@ -42,7 +42,7 @@ function Banner() {
             </p>
           </div>
           {/* -------------media---------banner--------*/}
-          <div className="flex justify-between pb-8">
+          <div className="flex justify-between pb-7">
             <div>
               <h2 className="text-xl font-medium mb-4">FIND ME IN</h2>
               <div className="flex gap-4">
