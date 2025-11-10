@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-scroll';
 import logo from '../../assets/images/logo.png';
-import {navLinksdata} from '../../constants';
+import {navLinksdata} from '../../constants/Index'
 const Navbar = () => {
   return (
     <section className="container ">
