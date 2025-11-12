@@ -4,10 +4,10 @@ import {CgArrowLongRight} from 'react-icons/cg';
 const Card = ({title, des, icon}) => {
   return (
     <div
-      className="w-full h-80 px-12 py-10 transition-colors border border-red-700  hover:border-fuchsia-500
+      className="w-full h-80 px-12 py-10 transition-colors hover:border  hover:border-fuchsia-500
       rounded-lg shadow-2xl flex items-center group
      duration-100 hover:bg-linear-to-b hover:from-black hover:to-[#1e2024]
-     bg-linear-to-r from-gray-800 to-[#202327] ">
+     bg-linear-to-r from-[#212428] to-[#202327] ">
       <div className="h-72 overflow-y-hidden">
         <div className="flex h-full translate-y-16 group-hover:translate-y-0 flex-col 
         transition-transform  duration-500  gap-10">

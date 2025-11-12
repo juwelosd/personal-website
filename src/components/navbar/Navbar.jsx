@@ -4,7 +4,7 @@ import logo from '../../assets/images/logo.png';
 import {navLinksdata} from '../../constants/Index'
 const Navbar = () => {
   return (
-    <section  className=" container sticky top-0 z-50 bg-gray-800 ">
+    <section  className=" container sticky top-0 z-50 bg-[#212428] ">
       <div className=" ">
   <div className="  h-24  flex mx-auto 
     justify-between items-center ">

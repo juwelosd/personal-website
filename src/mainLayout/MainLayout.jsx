@@ -10,7 +10,7 @@ import Contact from '../components/contact/Contact'
 
 function MainLayout() {
   return (
-    <div className=' bg-gray-800    h-auto text-white'>
+    <div className=' bg-[#212428]    h-auto text-white'>
       <div className="max-w-screen-2xl mx-auto px-16">
          <Navbar  />
         <Outlet/>
