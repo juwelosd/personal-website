@@ -11,7 +11,8 @@ import {SiHostinger} from 'react-icons/si';
 
 function Features() {
   return (
-    <section id="features" className=" container w-full  pt-10 pb-20   border-b border-b-black">
+    <section id="features" className=" container w-full  pt-10 pb-20  ">
+      
       <Title title="Features" des="What I do" />
 
       <div className="grid grid-cols-3 gap-20">

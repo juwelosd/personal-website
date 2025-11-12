@@ -35,10 +35,13 @@ function Banner() {
               <Cursor cursorBlinking="false" cursorStyle="|" cursorColor="#ff014f" />
             </h2>
 
-            <p className="text-base font-normal leading-[120%] tracking-wide">
-              I use animation as a third dimension by which to simplify experiences <br />
-              and guiding through each and every interaction. I'm not adding motion <br />
-              just to spruce things up, but doing it in ways that.
+            <p className="text-base font-normal leading-relaxed  tracking-wide">
+             As a budding MERN Frontend Developer, I focus on creating <br />
+             seamless andmeaningful user experiences. I use animation <br />
+             not just for decoration, but as a tool to enhance clarity <br />
+              and guide users naturally through every interaction. My  <br />
+              goal is to combine clean design, performance, and intuitive <br />
+               motion to make interfaces feel alive and easy to use.
             </p>
           </div>
           {/* -------------media---------banner--------*/}
