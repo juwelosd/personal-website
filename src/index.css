@@ -1,20 +1,43 @@
+/* ✅ 1. Tailwind imports (v4 syntax) */
+@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@import "tailwindcss";
 
 
-@theme{
-    --container-max-width:1560px;
-    --container-padding-x:3rem;
+
+
+/* ✅ 2. Optional layers (theme + utilities) */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+/* ✅ 3. Google fonts (সব শেষে না, Tailwind import এর পর) */
+
+
+/* 🌈 Custom theme variables */
+@theme {
+  --container-max-width: 1560px;
+  --container-padding-x: 3rem;
 }
-.container{
-    
-        max-width: var(--container-max-width);
-        padding-left: var(--container-padding-x);
-        padding-right: var(--container-padding-x);
-        margin-left: auto;
-        margin-right: auto;
+
+/* 🌐 Custom container class */
+.container {
+  max-width: var(--container-max-width);
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+  margin-left: auto;
+  margin-right: auto;
 }
-.active{
-    color: rgb(238, 13, 10);
+
+/* 🔴 Active link style */
+.active {
+  color: rgb(238, 13, 10);
+}
+
+/* 🧩 Custom component class (fixed for Tailwind v4) */
+@layer components {
+  .resumeLi {
+    @apply w-full h-20 bg-black/25 text-xl text-gray-300 flex items-center
+      hover:bg-black/40  duration-300 border rounded-none justify-center
+      cursor-pointer;
+  }
 }

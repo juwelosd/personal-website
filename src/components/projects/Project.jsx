@@ -7,13 +7,14 @@ import projectimg3 from '../../assets/images/projectimg3.jpg'
 
 function Project() {
   return (
-    <section id="projects" className="container py-20 w-full">
-      <div className="   ">
+    <section id="projects" className="container pt-10  w-full">
+      <div className=" border-b border-b-black py-20  ">
         <div className=" flex items-center justify-center text-center">
           <Title title="VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK" des="My Projects" />
+
         </div>
-      </div>
-      <div className='grid grid-cols-3 gap-14'>
+
+ <div className='grid grid-cols-3 gap-14'>
         <ProjectCard 
          title="SOCIAL MEDIA CLONE"
           des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -40,6 +41,10 @@ function Project() {
               Explicabo quibusdam voluptate sapiente voluptatibus harum ."
               src={projectimg2} />
       </div>
+
+
+      </div>
+     
     </section>
   );
 }

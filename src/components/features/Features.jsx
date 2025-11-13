@@ -12,10 +12,10 @@ import {SiHostinger} from 'react-icons/si';
 function Features() {
   return (
     <section id="features" className=" container w-full  pt-10 pb-20  ">
-      
-      <Title title="Features" des="What I do" />
+      <div className="border-b border-b-black py-20">
+ <Title title="Features" des="What I do" />
 
-      <div className="grid grid-cols-3 gap-20">
+ <div className="grid grid-cols-3 gap-20">
         <Card
           title="Business Stratagy"
           des="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, dolorem? "
@@ -48,6 +48,11 @@ function Features() {
           icon={<SiHostinger className="animate-bounce" />}
         />
       </div>
+
+      </div>
+     
+
+     
     </section>
   );
 }
