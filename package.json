@@ -18,6 +18,8 @@
     "react-router": "^7.9.5",
     "react-scroll": "^1.9.3",
     "react-simple-typewriter": "^5.0.1",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "^4.1.17",
     "typewriter-effect": "^2.22.0"
   },

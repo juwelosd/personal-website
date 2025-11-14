@@ -16,7 +16,7 @@ function ResumeCard({title, subTitle, results, des}) {
       <div
         className="w-full bg-black/20 hover:bg-black/30 duration-300 
    rounded-lg p-4 px-10  flex flex-col justify-center gap-6 lg:gap-10 shadow-xl">
-        <div className='flex justify-between items-center'>
+        <div className="flex justify-between items-center">
           <div>
             <h3 className=" text-2xl  font-semibold group-hover:text-red-600 duration-300">
               {title}
@@ -26,14 +26,18 @@ function ResumeCard({title, subTitle, results, des}) {
             </p>
           </div>
           <div>
-            <p className='px-4 py-2 text-red-700 hover:bg-pink-600 bg-black/25 rounded-lg 
-            flex justify-center items-center shadow-2xl text-sm font-medium'>{results}</p>
+            <p
+              className="px-4 py-2 text-red-700 hover:bg-pink-600 bg-black/25 rounded-lg 
+            flex justify-center items-center shadow-2xl text-sm font-medium">
+              {results}
+            </p>
           </div>
-          
         </div>
         <div>
-            <p className='text-sm md:text-base font-medium text-gray-400 group-hover:text-gray-300 duration-300'>{des}</p>
-          </div>
+          <p className="text-sm md:text-base font-medium text-gray-400 group-hover:text-gray-300 duration-300">
+            {des}
+          </p>
+        </div>
       </div>
     </div>
   );
