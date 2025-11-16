@@ -35,17 +35,17 @@ const ContactLeft = () => {
       <div className="flex flex-col gap-4">
         <h2 className="text-base uppercase font-titleFont mb-4">Find me in</h2>
         <div className="flex gap-4">
-          <span className="w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex
+          <span className="w-16 h-16  bg-black/25 text-gray-200 text-xl inline-flex
          items-center justify-center rounded-md shadow-2xl hover:bg-black/4040 
          hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300">
             <FaFacebookF />
           </span>
-          <span className="w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex
+          <span className="w-16 h-16  bg-black/25 text-gray-200 text-xl inline-flex
          items-center justify-center rounded-md shadow-2xl hover:bg-black/4040 
          hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300">
             <FaWhatsapp />
           </span>
-          <span className="w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex
+          <span className="w-16 h-16  bg-black/25 text-gray-200 text-xl inline-flex
          items-center justify-center rounded-md shadow-2xl hover:bg-black/4040 
          hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300">
             <FaInstagram />

@@ -1,18 +1,18 @@
-import React, { useRef, useState } from "react";
-import Title from "../wow/Title";
-import ContactLeft from "./ContactLeft";
-import emailjs from "@emailjs/browser";
+import React, {useRef, useState} from 'react';
+import Title from '../wow/Title';
+import ContactLeft from './ContactLeft';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const formRef = useRef();
 
-  const [username, setUsername] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [successMsg, setSuccessMsg] = useState("");
+  const [username, setUsername] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
 
   // Email validation
@@ -27,64 +27,62 @@ const Contact = () => {
 
     // ---- VALIDATION ----
     if (!username.trim()) {
-      setErrMsg("Username is required!");
-      setSuccessMsg("");
+      setErrMsg('Username is required!');
+      setSuccessMsg('');
       return;
     }
     if (!phoneNumber.trim()) {
-      setErrMsg("Phone number is required!");
-      setSuccessMsg("");
+      setErrMsg('Phone number is required!');
+      setSuccessMsg('');
       return;
     }
     if (!email.trim()) {
-      setErrMsg("Please give your Email!");
-      setSuccessMsg("");
+      setErrMsg('Please give your Email!');
+      setSuccessMsg('');
       return;
     }
     if (!emailValidation()) {
-      setErrMsg("Give a valid Email!");
-      setSuccessMsg("");
+      setErrMsg('Give a valid Email!');
+      setSuccessMsg('');
       return;
     }
     if (!subject.trim()) {
-      setErrMsg("Please give your Subject!");
-      setSuccessMsg("");
+      setErrMsg('Please give your Subject!');
+      setSuccessMsg('');
       return;
     }
     if (!message.trim()) {
-      setErrMsg("Message is required!");
-      setSuccessMsg("");
+      setErrMsg('Message is required!');
+      setSuccessMsg('');
       return;
     }
 
-    setErrMsg("");
+    setErrMsg('');
     setLoading(true);
 
     // ---- SEND EMAIL USING EMAILJS ----
     emailjs
       .sendForm(
-        "service_kr28r4k",    // ← EmailJS Service ID
-        "template_1k6hhrd",   // ← EmailJS Template ID
-        formRef.current,      // ← Form reference
-        "KGohqSZ4y584vRopy"     // ← EmailJS Public Key
+        'service_kr28r4k', // ← EmailJS Service ID
+        'template_1k6hhrd', // ← EmailJS Template ID
+        formRef.current, // ← Form reference
+        'KGohqSZ4y584vRopy' // ← EmailJS Public Key
       )
       .then(
         () => {
           setLoading(false);
-          setSuccessMsg(
-            `Thank you dear ${username}, Your message has been sent successfully!`
-          );
+          setSuccessMsg(`Thank you dear ${username}, Your message has been sent successfully!`);
 
           // Clear form inputs
-          setUsername("");
-          setPhoneNumber("");
-          setEmail("");
-          setSubject("");
-          setMessage("");
+          setUsername('');
+          setPhoneNumber('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
         },
         (error) => {
           setLoading(false);
-          setErrMsg("Something went wrong! Try again.");
+          setErrMsg('Something went wrong! Try again.');
           console.log(error.text);
         }
       );
@@ -99,11 +97,10 @@ const Contact = () => {
       <div className="w-full flex flex-row flex-wrap justify-between mt-10">
         <ContactLeft />
 
-        <div className="w-full lg:w-[60%] bg-linear-to-r from-[#1e2024] to-[#23272b]
+        <div
+          className="w-full lg:w-[60%] bg-linear-to-r from-[#1e2024] to-[#23272b]
          p-8 rounded-lg shadow-2xl mt-10 lg:mt-0">
-          {errMsg && (
-            <p className="py-3 text-center text-orange-500 animate-bounce">{errMsg}</p>
-          )}
+          {errMsg && <p className="py-3 text-center text-orange-500 animate-bounce">{errMsg}</p>}
           {successMsg && (
             <p className="py-3 text-center text-green-500 animate-bounce">{successMsg}</p>
           )}
@@ -118,7 +115,7 @@ const Contact = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                className="flex-1 p-3 bg-[#141518] text-gray-300 rounded border border-red-700"
+                className="flex-1 p-3 bg-[#141518] text-gray-300 rounded border border-red-800"
               />
               <input
                 type="text"
@@ -161,16 +158,14 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
               rows="6"
               required
-              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700"
-            ></textarea>
+              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700"></textarea>
 
             {/* Submit Button */}
             <button
               type="submit"
               className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-500 tracking-wider uppercase
-               hover:text-white duration-300 hover:border hover:border-red-700 border-transparent "
-            >
-              {loading ? "Sending..." : "Send Message"}
+               hover:text-white duration-300 hover:border hover:border-red-700 border-transparent ">
+              {loading ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
