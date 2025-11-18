@@ -8,15 +8,14 @@ import testimonial1 from "../../assets/images/testimonial1.png";
 import Testimonial2 from "../../assets/images/testimonial2.png";
 import Testimonial3 from "../../assets/images/testimonial3.png";
 import testimonial4 from "../../assets/images/testimonial4.png";
-import quote from "../../assets/images/quote.png"; // FIXED IMPORT
+import quote from "../../assets/images/quote.png";
 
 // NEXT ARROW
 function SampleNextArrow({ onClick }) {
   return (
     <div
-      className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md
-       text-2xl text-gray-400 flex justify-center items-center absolute top-0 right-0 
-       shadow-2xl cursor-pointer z-10"
+      className="w-12 h-12 md:w-14 md:h-14 bg-[#0c1821] hover:bg-black duration-300 rounded-full
+      flex justify-center items-center text-gray-400 text-2xl absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-10 cursor-pointer shadow-lg"
       onClick={onClick}
     >
       <HiArrowRight />
@@ -28,9 +27,8 @@ function SampleNextArrow({ onClick }) {
 function SamplePrevArrow({ onClick }) {
   return (
     <div
-      className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 
-      rounded-md text-2xl text-gray-400 flex justify-center items-center 
-      absolute top-0 right-20 shadow-2xl cursor-pointer z-10"
+      className="w-12 h-12 md:w-14 md:h-14 bg-[#0c1821] hover:bg-black duration-300 rounded-full
+      flex justify-center items-center text-gray-400 text-2xl absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-10 cursor-pointer shadow-lg"
       onClick={onClick}
     >
       <HiArrowLeft />
@@ -41,6 +39,53 @@ function SamplePrevArrow({ onClick }) {
 const Testimonial = () => {
   const [dotActive, setDotActive] = useState(0);
 
+  const testimonials = [
+    {
+      img: testimonial1,
+      name: "Alisha Jon",
+      title: "Operation Officer",
+      company: "Bound - Trolola",
+      project: "Travel Mobile App Design",
+      date: "via Upwork - Mar 4, 2015 - Aug 30, 2021",
+      rating: 5,
+      feedback:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione quos debitis exercitationem.",
+    },
+    {
+      img: Testimonial2,
+      name: "Jone Duone Joe",
+      title: "Operation Officer",
+      company: "Bound - Trolola",
+      project: "Travel Mobile App Design",
+      date: "via Upwork - Mar 4, 2015 - Aug 30, 2021",
+      rating: 5,
+      feedback:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      img: Testimonial3,
+      name: "Alisu Joe",
+      title: "Operation Officer",
+      company: "Bound - Trolola",
+      project: "Travel Mobile App Design",
+      date: "via Upwork - Mar 4, 2015 - Aug 30, 2021",
+      rating: 5,
+      feedback:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      img: testimonial4,
+      name: "Yamene",
+      title: "Operation Officer",
+      company: "Bound - Trolola",
+      project: "Travel Mobile App Design",
+      date: "via Upwork - Mar 4, 2015 - Aug 30, 2021",
+      rating: 5,
+      feedback:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+  ];
+
   const settings = {
     dots: true,
     infinite: true,
@@ -50,259 +95,72 @@ const Testimonial = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     beforeChange: (prev, next) => setDotActive(next),
-
     appendDots: (dots) => (
-      <div style={{ borderRadius: "10px", padding: "10px" }}>
-        <ul
-          style={{
-            display: "flex",
-            gap: "15px",
-            justifyContent: "center",
-            marginTop: "20px",
-          }}
-        >
-          {dots}
-        </ul>
+      <div>
+        <ul className="flex gap-3 justify-center mt-5">{dots}</ul>
       </div>
     ),
-
     customPaging: (i) => (
       <div
-        style={{
-          width: "12px",
-          height: "12px",
-          background: i === dotActive ? "#ff014f" : "gray",
-          borderRadius: "50%",
-          cursor: "pointer",
-        }}
+        className={`w-3 h-3 rounded-full cursor-pointer ${
+          i === dotActive ? "bg-red-600" : "bg-gray-500"
+        }`}
       ></div>
     ),
   };
 
   return (
-    <section id="testimonial" className="w-full py-20 border-b border-b-black">
-      <div className="flex justify-center items-center text-center">
+    <section id="testimonial" className="w-full py-20 border-b border-black">
+      <div className="flex justify-center items-center text-center mb-10">
         <Title title="WHAT CLIENTS SAY" des="Testimonial" />
       </div>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4">
         <Slider {...settings}>
-          {/* ======= SLIDE ONE ======= */}
-          <div className="w-full">
-            <div className="w-full h-auto flex flex-col lg:flex-row justify-between">
-              {/* LEFT */}
-              <div className="w-full lg:w-[35%] h-full bg-linear-to-r from-[#1e2024]
-               to-[#23272b] p-8 rounded-lg shadow-2xl flex flex-col gap-8 justify-center">
-                <img
-                  className="h-72 rounded-lg object-cover"
-                  src={testimonial1}
-                  alt="testimonial1"
-                />
-
-                <div className="w-full flex flex-col justify-end">
-                  <p className="text-xs uppercase text-red-700 tracking-wide mb-2">
-                    Bound - Trolola
-                  </p>
-                  <h3 className="text-2xl font-bold">Alisha Jon</h3>
-                  <p className="text-base tracking-wide text-gray-500">
-                    Operation Officer
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="w-full lg:w-[60%] flex flex-col justify-between">
-                <img className="w-20 " src={quote} alt="quote" />
-
-                <div className="w-full h-[70%] py-10 bg-linear-to-r from-[#1e2024]
-                 to-[#23272b] rounded-lg shadow-2xl p-4 flex flex-col justify-center gap-4 lg:gap-8">
-                  <div className="flex flex-col lg:items-center py-6 border-b-2 border-b-gray-900">
-                    <div>
-                      <h3 className="text-xl lg:text-2xl font-medium tracking-wide">
-                        Travel Mobile App Design.
-                      </h3>
-                      <p className="text-base text-gray-400 mt-3">
-                        via Upwork - Mar 4, 2015 - Aug 30, 2021
-                      </p>
-                    </div>
-
-                    <div className="text-yellow-500 flex gap-1">
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                    </div>
-                  </div>
-
-                  <p className="text-base text-gray-400 font-medium tracking-wide leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Necessitatibus ratione quos debitis exercitationem.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ===== SLIDE TWO ===== */}
-          <div className="w-full">
-            <div className="w-full h-auto flex flex-col lg:flex-row justify-between">
-              {/* LEFT */}
-              <div className="w-full lg:w-[35%] bg-linear-to-r from-[#1e2024] 
-              to-[#23272b] p-8 rounded-lg shadow-2xl flex flex-col gap-8 justify-center">
-                <img
-                  className="h-72 bg-center rounded-lg object-cover"
-                  src={Testimonial2}
-                  alt="Testimonial2"
-                />
-
-                <div>
-                  <p className="text-xs uppercase text-red-700 tracking-wide mb-2">
-                    Bound - Trolola
-                  </p>
-                  <h3 className="text-2xl font-bold">Jone Duone Joe</h3>
-                  <p className="text-base tracking-wide text-gray-500">
-                    Operation Officer
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="w-full lg:w-[60%] flex flex-col justify-between">
-                <img className="w-20" src={quote} alt="quote" />
-
-                <div className="w-full h-[70%] py-10 bg-linear-to-r from-[#1e2024]
-                 to-[#23272b] rounded-lg shadow-2xl p-4 flex flex-col justify-center gap-4">
-                  <div className="flex flex-col py-6 border-b-2 border-b-gray-900">
-                    <h3 className="text-xl lg:text-2xl font-medium tracking-wide">
-                      Travel Mobile App Design.
-                    </h3>
-                    <p className="text-base text-gray-400 mt-3">
-                      via Upwork - Mar 4, 2015 - Aug 30, 2021
+          {testimonials.map((item, index) => (
+            <div key={index} className="w-full">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
+                {/* LEFT */}
+                <div className="w-full lg:w-1/3 flex flex-col bg-linear-to-r from-[#1e2024] to-[#23272b] p-6 md:p-8 rounded-lg shadow-2xl gap-6 justify-center">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-60 md:h-72 rounded-lg object-cover"
+                  />
+                  <div>
+                    <p className="text-xs uppercase text-red-700 tracking-wide mb-1">
+                      {item.company}
                     </p>
-
-                    <div className="text-yellow-500 flex gap-1 mt-4">
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold">{item.name}</h3>
+                    <p className="text-gray-400">{item.title}</p>
                   </div>
-
-                  <p className="text-base text-gray-400 font-medium leading-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          {/* ===== SLIDE THREE ===== */}
-          <div className="w-full">
-            <div className="w-full h-auto flex flex-col lg:flex-row justify-between">
-              <div className="w-full lg:w-[35%] bg-linear-to-r from-[#1e2024]
-               to-[#23272b] p-8 rounded-lg shadow-2xl flex flex-col gap-8 justify-center">
-                <img
-                  className="h-72 rounded-lg object-cover"
-                  src={Testimonial3}
-                  alt="Testimonial3"
-                />
-
-                <div>
-                  <p className="text-xs uppercase text-red-700 tracking-wide mb-2">
-                    Bound - Trolola
-                  </p>
-                  <h3 className="text-2xl font-bold"> Alisu Joe</h3>
-                  <p className="text-base tracking-wide text-gray-500">
-                    Operation Officer
-                  </p>
-                </div>
-              </div>
-
-              <div className="w-full lg:w-[60%] flex flex-col justify-between">
-                <img className="w-20" src={quote} alt="quote" />
-
-                <div className="w-full h-[70%] py-10 bg-linear-to-r from-[#1e2024]
-                 to-[#23272b] rounded-lg shadow-2xl p-4 flex flex-col justify-center gap-4">
-                  <div className="flex flex-col py-6 border-b-2 border-b-gray-900">
-                    <h3 className="text-xl lg:text-2xl font-medium tracking-wide">
-                      Travel Mobile App Design.
-                    </h3>
-
-                    <p className="text-base text-gray-400 mt-3">
-                      via Upwork - Mar 4, 2015 - Aug 30, 2021
+                {/* RIGHT */}
+                <div className="w-full lg:w-2/3 flex flex-col gap-4">
+                  <img className="w-16 md:w-20" src={quote} alt="quote" />
+                  <div className="bg-linear-to-r from-[#1e2024] to-[#23272b] p-4 md:p-6 rounded-lg shadow-2xl flex flex-col gap-4">
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b border-gray-800 pb-4">
+                      <div>
+                        <h3 className="text-lg md:text-xl font-medium">{item.project}</h3>
+                        <p className="text-gray-400 text-sm mt-1">{item.date}</p>
+                      </div>
+                      <div className="flex text-yellow-500 gap-1 mt-2 lg:mt-0">
+                        {Array(item.rating)
+                          .fill()
+                          .map((_, i) => (
+                            <RiStarFill key={i} />
+                          ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-400 text-sm md:text-base leading-6 font-medium">
+                      {item.feedback}
                     </p>
-
-                    <div className="text-yellow-500 flex gap-1 mt-4">
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                    </div>
                   </div>
-
-                  <p className="text-base text-gray-400 leading-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* ===== SLIDE FOUR ===== */}
-          <div className="w-full">
-            <div className="w-full h-auto flex flex-col lg:flex-row justify-between">
-              <div className="w-full lg:w-[35%] bg-linear-to-r from-[#1e2024]
-               to-[#23272b] p-8 rounded-lg shadow-2xl flex flex-col gap-8 justify-center">
-                <img
-                  className="h-72 rounded-lg object-cover"
-                  src={testimonial4}
-                  alt="testimonial4"
-                />
-
-                <div>
-                  <p className="text-xs uppercase text-red-700 tracking-wide mb-2">
-                    Bound - Trolola
-                  </p>
-                  <h3 className="text-2xl font-bold"> Yamene </h3>
-                  <p className="text-base tracking-wide text-gray-500">
-                    Operation Officer
-                  </p>
-                </div>
-              </div>
-
-              <div className="w-full lg:w-[60%] flex flex-col justify-between">
-                <img className="w-20" src={quote} alt="quote" />
-
-                <div className="w-full h-[70%] py-10 bg-linear-to-r from-[#1e2024]
-                 to-[#23272b] rounded-lg shadow-2xl p-4 flex flex-col justify-center gap-4">
-                  <div className="flex flex-col py-6 border-b-2 border-b-gray-900">
-                    <h3 className="text-xl lg:text-2xl font-medium tracking-wide">
-                      Travel Mobile App Design.
-                    </h3>
-
-                    <p className="text-base text-gray-400 mt-3">
-                      via Upwork - Mar 4, 2015 - Aug 30, 2021
-                    </p>
-
-                    <div className="text-yellow-500 flex gap-1 mt-4">
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                      <RiStarFill />
-                    </div>
-                  </div>
-
-                  <p className="text-base text-gray-400 leading-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </section>

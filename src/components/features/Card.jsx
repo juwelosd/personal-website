@@ -1,33 +1,36 @@
 import React from 'react';
-import {CgArrowLongRight} from 'react-icons/cg';
+import { CgArrowLongRight } from 'react-icons/cg';
 
-const Card = ({title, des, icon}) => {
+const Card = ({ title, des, icon }) => {
   return (
     <div
-      className="w-full h-80 px-12 py-10 transition-colors hover:border  hover:border-fuchsia-500
+      className="w-full h-auto sm:h-80 px-6 sm:px-12 py-8 sm:py-10 transition-colors 
       rounded-lg shadow-2xl flex items-center group
-     duration-100 hover:bg-linear-to-b hover:from-black hover:to-[#1e2024]
-     bg-linear-to-r from-[#212428] to-[#202327] ">
-      <div className="h-72 overflow-y-hidden">
-        <div className="flex h-full translate-y-16 group-hover:translate-y-0 flex-col 
-        transition-transform  duration-500  gap-10">
-          <div>
-            {
-                icon?<span className='text-4xl text-red-700'>{icon}</span>:(
-                    <>
-
-                    <span className='w-full h-[ 2px] rounded-lg inline-flex bg-red-700 '></span>
-                    <span className='w-full h-[ 2px] rounded-lg inline-flex bg-red-700 '></span>
-                    <span className='w-full h-[ 2px] rounded-lg inline-flex bg-red-700 '></span>
-                    <span className='w-full h-[ 2px] rounded-lg inline-flex bg-red-700 '></span>
-                    </>
-                )
-            }
+      duration-300 hover:border hover:border-fuchsia-500
+      bg-gradient-to-r from-[#212428] to-[#202327] hover:bg-gradient-to-b hover:from-black hover:to-[#1e2024]"
+    >
+      <div className="h-full overflow-hidden">
+        <div
+          className="flex flex-col gap-6 sm:gap-10 h-full translate-y-16 group-hover:translate-y-0 
+          transition-transform duration-500"
+        >
+          <div className="flex justify-center sm:justify-start">
+            {icon ? (
+              <span className="text-4xl sm:text-5xl md:text-6xl text-red-700">{icon}</span>
+            ) : (
+              <>
+                <span className="w-full h-[ 2px] rounded-lg inline-flex bg-red-700"></span>
+                <span className="w-full h-[ 2px] rounded-lg inline-flex bg-red-700"></span>
+                <span className="w-full h-[ 2px] rounded-lg inline-flex bg-red-700"></span>
+                <span className="w-full h-[ 2px] rounded-lg inline-flex bg-red-700"></span>
+              </>
+            )}
           </div>
-          <div className="flex flex-col gap-6">
-            <h2 className="text-2xl text-gray-300 font-bold ">{title}</h2>
-            <h6 className="text-base font-normal">{des} </h6>
-            <span className="text-4xl text-red-700">
+
+          <div className="flex flex-col gap-4 sm:gap-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-bold">{title}</h2>
+            <p className="text-sm sm:text-base md:text-lg font-normal text-gray-400">{des}</p>
+            <span className="text-3xl sm:text-4xl text-red-700 mt-2">
               <CgArrowLongRight />
             </span>
           </div>
