@@ -7,6 +7,7 @@ import Project from '../components/projects/Project'
 import Resume from '../components/resume/Resume'
 import Testimonial from '../components/tesitmonial/Testimonial'
 import Contact from '../components/contact/Contact'
+import FooterBottom from '../components/footer/FooterBottom'
 
 function MainLayout() {
   return (
@@ -20,6 +21,7 @@ function MainLayout() {
         <Testimonial/>
         <Contact/>
         <Footer/>
+        <FooterBottom/>
       </div>
      
     </div>

@@ -2,9 +2,9 @@ import React from 'react';
 
 function ResumeCard({ title, subTitle, results, des }) {
   return (
-    <div className="w-full group flex flex-col sm:flex-row mb-8">
+    <div className="w-full h-1/3 group flex flex-col sm:flex-row mb-8">
       {/* Timeline dot */}
-      <div className="flex-shrink-0 flex justify-center sm:justify-start sm:w-12 relative mt-4 sm:mt-0">
+      <div className=" justify-center sm:justify-start sm:w-12 relative mt-16 sm:mt-16">
         <div className="h-3 w-12 relative bg-black">
           <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex justify-center items-center bg-black/40">
             <span className="w-3 h-3 duration-300 rounded-full group-hover:bg-red-700 inline-flex bg-[#212428]"></span>
@@ -13,7 +13,8 @@ function ResumeCard({ title, subTitle, results, des }) {
       </div>
 
       {/* Content */}
-      <div className="w-full bg-black/20 hover:bg-black/30 duration-300 rounded-lg p-4 sm:p-6 lg:p-8 flex flex-col justify-center gap-4 sm:gap-6 lg:gap-10 shadow-xl ml-0 sm:ml-6 mt-4 sm:mt-0">
+      <div className="w-full bg-black/20  hover:bg-black/30 duration-300 rounded-lg p-4 sm:p-6 lg:p-8 flex flex-col 
+      justify-center gap-4 sm:gap-6 lg:gap-10 shadow-2xl ml-0  mt-4 sm:mt-0">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
           <div>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold group-hover:text-red-600 duration-300">

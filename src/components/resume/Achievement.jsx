@@ -2,22 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ResumeCard from './ResumeCard';
 
-function Achievement() {
+function Education() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="w-full flex flex-col lg:flex-row gap-10 lg:gap-20"
+      animate={{ opacity: 20 }}
+      transition={{ duration: 15 }}
+      className="w-full flex flex-col md:flex-col lg:flex-row gap-10 lg:gap-20"
     >
-      {/* Company Experience */}
-      <div className="flex-1">
-        <div className="py-8 font-medium">
+      {/* Education Section */}
+      <div className="w-full">
+        <div className="py-12 font-medium">
           <p className="text-sm text-red-700 tracking-[4px]">0000-0000</p>
-          <h2 className="text-3xl md:text-4xl font-bold py-2">Company Experience</h2>
+          <h2 className="text-4xl md:text-4xl lg:text-4xl font-bold py-2">
+            Education Quality
+          </h2>
         </div>
 
-        <div className="flex flex-col gap-6 border-l-4 border-black/30 pl-4 lg:pl-6">
+        <div className="md:w-full h-[1000px] w-[300px] md:h-[1000px] lg:h-[1000px] border-l-[6px]
+         border-l-black border-black/30 flex flex-col gap-10">
           <ResumeCard
             title="BSC in Computer Science"
             subTitle="University of X (000-000)"
@@ -39,14 +42,16 @@ function Achievement() {
         </div>
       </div>
 
-      {/* Job Experience */}
-      <div className="flex-1">
-        <div className="py-8 font-medium">
+      {/* Job Experience Section */}
+      <div className="w-full">
+        <div className="py-12 font-medium">
           <p className="text-sm text-red-700 tracking-[4px]">0000-0000</p>
-          <h2 className="text-3xl md:text-4xl font-bold py-2">Job Experience</h2>
+          <h2 className="text-4xl md:text-4xl lg:text-4xl font-bold py-2">
+            Job Experience
+          </h2>
         </div>
 
-        <div className="flex flex-col gap-6 border-l-4 border-black/30 pl-4 lg:pl-6">
+        <div className="w-full h-[1000px] md:h-[1000px] lg:h-[1000px] flex flex-col gap-10 border-l-4 border-black/30">
           <ResumeCard
             title="Software Engineer"
             subTitle="X: X: (000-000)"
@@ -71,4 +76,4 @@ function Achievement() {
   );
 }
 
-export default Achievement;
+export default Education;
