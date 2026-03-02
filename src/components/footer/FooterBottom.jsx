@@ -1,4 +1,3 @@
-// src/components/footer/FooterBottom.jsx
 import React from "react";
 
 const FooterBottom = () => {
@@ -12,13 +11,14 @@ const FooterBottom = () => {
             key={i}
             className="absolute animate-flower-premium"
             style={{
-              fontSize: `${Math.random() * 25 + 10}px`, // বিভিন্ন আকারের ফুল
+              fontSize: `${Math.random() * 25 + 10}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               opacity: 0,
-              animationDelay: `${Math.random() * 10}s`, // ছড়িয়ে ছিটিয়ে আসা
-              animationDuration: `${Math.random() * 20 + 10}px`, // ধীরগতি
-              color: i % 2 === 0 ? "#ff8dc7" : i % 3 === 0 ? "#fccde2" : "#ffe6f2", // বিভিন্ন শেড
+              animationDelay: `${Math.random() * 10}s`,
+              // ভুল এখানে ছিল: px এর বদলে s ব্যবহার করা হয়েছে
+              animationDuration: `${Math.random() * 15 + 10}s`, 
+              color: i % 2 === 0 ? "#ff8dc7" : i % 3 === 0 ? "#fccde2" : "#ffe6f2", 
               textShadow: "0 0 8px rgba(255, 141, 199, 0.6)",
             }}
           >
@@ -32,27 +32,29 @@ const FooterBottom = () => {
         © 2026 YourWebsite. All rights reserved by Omor Faruk.
       </div>
 
-      {/* --- CSS Animation (Kept Smooth) --- */}
-      <style jsx>{`
+      {/* --- CSS Animation --- */}
+      <style>{`
         @keyframes flowerPremium {
           0% {
-            transform: translateY(0) rotate(0deg) scale(0.5);
+            transform: translateY(100px) rotate(0deg) scale(0.5);
             opacity: 0;
           }
-          15% {
-            opacity: 0.7; /* ফুটে উঠবে */
+          20% {
+            opacity: 0.7;
           }
-          85% {
+          80% {
             opacity: 0.7;
           }
           100% {
-            transform: translateY(-200px) rotate(180deg) scale(1.2);
+            transform: translateY(-150px) rotate(360deg) scale(1.2);
             opacity: 0; 
           }
         }
         
         .animate-flower-premium {
-          animation: flowerPremium linear infinite;
+          animation-name: flowerPremium;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
         }
       `}</style>
     </div>
