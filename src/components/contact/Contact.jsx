@@ -35,10 +35,10 @@ const Contact = () => {
     setLoading(true);
 
     emailjs.sendForm(
-      'service_kr28r4k', // Service ID
-      'template_1k6hhrd', // Template ID
+      'service_kr28r4k', 
+      'template_1k6hhrd', 
       formRef.current,
-      'KGohqSZ4y584vRopy' // Public Key
+      'KGohqSZ4y584vRopy' 
     )
     .then(() => {
       setLoading(false);
@@ -58,16 +58,15 @@ const Contact = () => {
       </div>
 
       <div className="w-full flex flex-col lg:flex-row gap-10 mt-10">
-        {/* Left Contact Info */}
         <ContactLeft />
 
-        {/* Right Form */}
-        <div className="w-full lg:w-2/3 bg-linear-to-r from-[#1e2024] to-[#23272b]
-          p-6 md:p-8 rounded-lg shadow-2xl">
+        {/* এখানে 'electric-border' ক্লাসটি যোগ করা হয়েছে */}
+        <div className="w-full lg:w-2/3 bg-[#1e2024] p-6 md:p-8 rounded-lg shadow-2xl electric-border">
+          
           {errMsg && <p className="py-3 text-center text-orange-500 animate-bounce">{errMsg}</p>}
-          {successMsg && <p className="py-3 text-center text-green-500 animate-bounce">{successMsg}</p>}
+          {successMsg && <p className="py-3 text-center text-green-500 animate-pulse">{successMsg}</p>}
 
-          <form ref={formRef} onSubmit={handleSend} className="flex flex-col gap-6 mt-4">
+          <form ref={formRef} onSubmit={handleSend} className="flex flex-col gap-6 mt-4 relative z-10">
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
@@ -75,7 +74,7 @@ const Contact = () => {
                 placeholder="Your Name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="flex-1 p-3 bg-[#141518] text-gray-300 rounded border border-red-800"
+                className="flex-1 p-3 bg-[#141518] text-gray-300 rounded border border-red-800 focus:border-red-500 outline-none duration-300"
               />
               <input
                 type="text"
@@ -83,7 +82,7 @@ const Contact = () => {
                 placeholder="Phone Number"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                className="flex-1 p-3 bg-[#141518] text-gray-300 rounded border border-red-700"
+                className="flex-1 p-3 bg-[#141518] text-gray-300 rounded border border-red-700 focus:border-red-500 outline-none duration-300"
               />
             </div>
 
@@ -93,7 +92,7 @@ const Contact = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700"
+              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700 focus:border-red-500 outline-none duration-300"
             />
 
             <input
@@ -102,7 +101,7 @@ const Contact = () => {
               placeholder="Subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700"
+              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700 focus:border-red-500 outline-none duration-300"
             />
 
             <textarea
@@ -111,13 +110,13 @@ const Contact = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows="6"
-              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700"
+              className="p-3 bg-[#141518] text-gray-300 rounded border border-red-700 focus:border-red-500 outline-none duration-300"
             />
 
             <button
               type="submit"
               className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-500 uppercase
-              hover:text-white hover:border hover:border-red-700 duration-300">
+              hover:text-white hover:border hover:border-red-700 active:scale-95 duration-300 shadow-md">
               {loading ? 'Sending...' : 'Send Message'}
             </button>
           </form>

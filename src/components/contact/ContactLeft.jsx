@@ -4,17 +4,21 @@ import contactimg from '../../assets/images/contactimg.png';
 
 const ContactLeft = () => {
   return (
-    <div className="w-full lg:w-[35%] bg-linear-to-r from-[#1e2024] to-[#23272b] p-6 rounded-lg shadow-2xl flex flex-col gap-6 justify-center">
+    // 'group' এবং 'opacity-0/group-hover:opacity-100' সরিয়ে ফেলা হয়েছে
+    <div className="relative w-full lg:w-[35%] bg-linear-to-r from-[#1e2024] to-[#23272b] p-6 rounded-lg shadow-2xl flex flex-col gap-6 justify-center overflow-hidden">
       
-      {/* Profile Image */}
+      {/* Lightning Border Effect - Always Visible */}
+      <div className="absolute inset-0 rounded-lg lightning-border"></div>
+
+      {/* Profile Image - z-10 রাখা হয়েছে যাতে বর্ডারের উপরে থাকে */}
       <img
-        className="w-full h-auto object-cover rounded-lg mb-4"
+        className="relative z-10 w-full h-auto object-cover rounded-lg mb-4"
         src={contactimg}
         alt="contactimg"
       />
 
-      {/* Contact Info */}
-      <div className="flex flex-col gap-3">
+      {/* Contact Info - z-10 রাখা হয়েছে */}
+      <div className="relative z-10 flex flex-col gap-3">
         <h3 className="text-3xl font-bold text-white">Omor Faruk</h3>
         <p className="text-lg text-gray-400">Frontend Developer</p>
         <p className="text-base text-gray-400 tracking-wide">
@@ -28,8 +32,8 @@ const ContactLeft = () => {
         </p>
       </div>
 
-      {/* Social Links */}
-      <div className="flex flex-col gap-3">
+      {/* Social Links - z-10 রাখা হয়েছে */}
+      <div className="relative z-10 flex flex-col gap-3">
         <h2 className="text-base uppercase font-semibold mb-2 text-gray-400">Find me in</h2>
         <div className="flex gap-4">
           {/* Facebook */}
