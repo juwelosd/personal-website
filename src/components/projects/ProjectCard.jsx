@@ -14,8 +14,8 @@ function ProjectCard({ title, des, src }) {
           <div className="title-row">
             <h3>{title}</h3>
             <div className="icons-row">
-              <span><BsGithub /></span>
-              <span><FaGlobe /></span>
+              <span><BsGithub /><a href=" https://juwelosd.github.io/grocify-website1/"></a></span>
+              <span><FaGlobe /> <a href="https://grocify-website1.vercel.app/#"></a> </span>
             </div>
           </div>
           <p>{des}</p>

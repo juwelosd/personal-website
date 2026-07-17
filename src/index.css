@@ -2,16 +2,11 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-
-
-
-
 /* ✅ 2. Optional layers (theme + utilities) */
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/utilities" layer(utilities);
 
 /* ✅ 3. Google fonts (সব শেষে না, Tailwind import এর পর) */
-
 
 /* 🌈 Custom theme variables */
 @theme {
@@ -40,17 +35,25 @@
       hover:bg-black/40  duration-300 border rounded-none justify-center
       cursor-pointer;
   }
-.scrollbar-hide::-webkit-scrollbar{
+  .scrollbar-hide::-webkit-scrollbar {
     display: none;
-}
-}
-@keyframes rotate-border {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  }
 }
 @keyframes rotate-border {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* গ্রিড ব্যাকগ্রাউন্ড (আপনার আগের কোড) */
@@ -60,7 +63,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 255, 100, 0.15) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 100, 0.15) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -71,20 +74,29 @@
 }
 
 @keyframes moveGreenGrid {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 50px; }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
 }
 
 /* নতুন গ্লো শেপস (ছবিটির মতো) */
 .grid-bg::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   width: 400px;
   height: 400px;
   /* সায়ান এবং পিঙ্ক ব্লব */
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.5) 0%, rgba(244, 114, 182, 0.3) 50%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.5) 0%,
+    rgba(244, 114, 182, 0.3) 50%,
+    transparent 70%
+  );
   filter: blur(60px);
   transform: translate(-50%, -50%);
   animation: blobMotion 8s ease-in-out infinite;
@@ -92,14 +104,14 @@
 }
 
 @keyframes blobMotion {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-40%, -60%) scale(1.1); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-40%, -60%) scale(1.1);
+  }
 }
-
-
-
-
-
 
 .card-container {
   position: relative;
@@ -114,7 +126,7 @@
 
 /* ৪ রঙের বর্ডার অ্যানিমেশন */
 .card-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -122,10 +134,10 @@
   bottom: -2px;
   background: linear-gradient(
     45deg,
-    #ff014f, /* Red */
-    #00ffff, /* Cyan */
-    #ffb400, /* Yellow */
-    #8b5cf6  /* Purple */
+    #ff014f,
+    /* Red */ #00ffff,
+    /* Cyan */ #ffb400,
+    /* Yellow */ #8b5cf6 /* Purple */
   );
   border-radius: 10px;
   z-index: 0;
@@ -134,7 +146,7 @@
 
 /* কার্ডের ভেতরের কন্টেন্ট ঠিক রাখার জন্য Background */
 .card-container::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 2px;
   background: #1e2024;
@@ -209,12 +221,13 @@
 }
 
 @keyframes borderRotate {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
-
-
-
 
 .always-electric {
   position: relative;
@@ -224,7 +237,7 @@
 
 /* সবসময় চলমান বর্ডার অ্যানিমেশন */
 .always-electric::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
@@ -237,7 +250,7 @@
 
 /* কার্ডের ভেতরের ব্যাকগ্রাউন্ড কন্টেন্ট ঢেকে না ফেলার জন্য */
 .always-electric::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 2px;
   background: #1e2024; /* আপনার কার্ডের মেইন ব্যাকগ্রাউন্ড কালার */
@@ -251,16 +264,13 @@
 }
 
 @keyframes borderRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
-
-
-
-
-
-
 
 .electric-border {
   position: relative;
@@ -280,12 +290,12 @@
   height: 200%;
   /* conic-gradient দিয়ে দুই পাশে দুই কালার সেট করা হয়েছে */
   background-image: conic-gradient(
-    transparent, 
-    #ff014f,     /* প্রথম কালার - লাল */
-    transparent 30%, 
-    transparent 50%, 
-    #00d2ff,     /* দ্বিতীয় কালার - নীল */
-    transparent 80%
+    transparent,
+    #ff014f,
+    /* প্রথম কালার - লাল */ transparent 30%,
+    transparent 50%,
+    #00d2ff,
+    /* দ্বিতীয় কালার - নীল */ transparent 80%
   );
   animation: rotate-border 3s linear infinite;
 }
@@ -295,7 +305,7 @@
   content: "";
   position: absolute;
   z-index: -1;
-  left: 3px;  /* বর্ডারের পুরুত্ব */
+  left: 3px; /* বর্ডারের পুরুত্ব */
   top: 3px;
   width: calc(100% - 6px);
   height: calc(100% - 6px);
@@ -325,7 +335,7 @@
 .lightning-border {
   position: absolute;
   /* বর্ডারের পুরুত্ব কন্ট্রোল করতে inset কমিয়ে বাড়াতে পারেন */
-  inset: -2px; 
+  inset: -2px;
   z-index: 0;
   border-radius: 8px; /* কন্টেইনারের বর্ডার রেডিয়াস */
   overflow: hidden;
@@ -362,15 +372,7 @@
   }
 }
 
-
-
-
-
-
-
-
 .lightning-border {
-  
   position: absolute;
   top: 0;
   left: 0;
@@ -382,24 +384,24 @@
 }
 
 .lightning-border::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
   background: conic-gradient(
-    transparent, 
-    #09d598,  /* বাম পাশের রঙ */
-    transparent, 
-    #9200e7,  /* ডান পাশের রঙ */
-    transparent
+    transparent,
+    #09d598,
+    /* বাম পাশের রঙ */ transparent,
+    #9200e7,
+    /* ডান পাশের রঙ */ transparent
   );
   animation: borderRotate 3s linear infinite;
 }
 
 .lightning-border::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 2px; /* বর্ডারের পুরুত্ব */
   background: #1e2024; /* কার্ডের ব্যাকগ্রাউন্ড কালার */
@@ -409,4 +411,30 @@
 
 .relative.z-10 {
   z-index: 10;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.animate-spin-slower {
+  animation: spin-slower 30s linear infinite;
 }
