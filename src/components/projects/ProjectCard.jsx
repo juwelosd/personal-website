@@ -14,8 +14,17 @@ function ProjectCard({ title, des, src }) {
           <div className="title-row">
             <h3>{title}</h3>
             <div className="icons-row">
-              <span><BsGithub /><a href=" https://juwelosd.github.io/grocify-website1/"></a></span>
-              <span><FaGlobe /> <a href="https://grocify-website1.vercel.app/#"></a> </span>
+              {/* আইকনগুলোকে <a> ট্যাগের ভেতরে দেওয়া হয়েছে যেন ক্লিক করা যায় */}
+              <span>
+                <a href="https://juwelosd.github.io/grocify-website1/" target="_blank" rel="noreferrer">
+                  <BsGithub />
+                </a>
+              </span>
+              <span>
+                <a href="https://grocify-website1.vercel.app/#" target="_blank" rel="noreferrer">
+                  <FaGlobe />
+                </a>
+              </span>
             </div>
           </div>
           <p>{des}</p>
